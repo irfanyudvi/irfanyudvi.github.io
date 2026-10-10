@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Portfolio of Irfan Yudvi Fadlurrohman, network operations and service assurance professional.">
+<title>Irfan Yudvi Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: single reading column like a printed service record; left rail of years for the timeline, compact link rows for evidence. */
+:root{
+  --bg:#F3F4F1; --surface:#FFFFFF; --ink:#151A1E; --muted:#5C666E; --rule:#DADFDC;
+  --accent:#0C6B68; --accent-soft:#E2EFEC; --signal:#C9741A;
+  --f-display:"Barlow Semi Condensed","Arial Narrow",system-ui,sans-serif;
+  --f-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0F1315; --surface:#171D20; --ink:#E7ECEA; --muted:#9AA6A3; --rule:#283133;
+  --accent:#5CC4BC; --accent-soft:#16302E; --signal:#F0A050; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0F1315; --surface:#171D20; --ink:#E7ECEA; --muted:#9AA6A3; --rule:#283133;
+  --accent:#5CC4BC; --accent-soft:#16302E; --signal:#F0A050; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.6;margin:0}
+.wrap{max-width:780px;margin:0 auto;padding-inline:20px;padding-block:40px 64px;display:grid;gap:44px}
+a{color:var(--accent)}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:3px}
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0}
+h1,h2,h3{font-family:var(--f-display);line-height:1.1;margin:0;text-wrap:balance}
+h1{font-size:clamp(2.3rem,7vw,3.4rem);font-weight:700;letter-spacing:-.01em}
+h2{font-size:1.6rem;font-weight:600;display:flex;align-items:baseline;gap:12px}
+h2::after{content:"";flex:1;height:1px;background:var(--rule)}
+h3{font-size:1.2rem;font-weight:600}
+header{display:grid;gap:14px}
+.role{font-size:1.15rem;color:var(--accent);font-weight:500;margin:0}
+.lede{margin:0;max-width:62ch;color:var(--ink)}
+.facts{display:flex;flex-wrap:wrap;gap:8px 18px;font-family:var(--f-mono);font-size:13px;color:var(--muted);margin:0;padding:0;list-style:none}
+.facts li::before{content:"▸ ";color:var(--signal)}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:10px;overflow:hidden}
+.stats div{background:var(--surface);padding:14px 16px}
+.stats b{display:block;font-family:var(--f-display);font-size:2rem;font-weight:700;line-height:1;font-variant-numeric:tabular-nums}
+.stats span{font-size:13px;color:var(--muted)}
+section{display:grid;gap:16px}
+.timeline{display:grid;gap:0;margin:0;padding:0;list-style:none}
+.timeline>li{display:grid;grid-template-columns:110px 1fr;gap:16px;padding:16px 0;border-top:1px solid var(--rule)}
+.timeline>li:first-child{border-top:0;padding-top:4px}
+.timeline>li>div{min-width:0}
+.yr{font-family:var(--f-mono);font-size:13px;color:var(--muted);padding-top:3px;font-variant-numeric:tabular-nums}
+.timeline .now{color:var(--signal)}
+.timeline p{margin:6px 0 0}
+.timeline ul{margin:8px 0 0;padding-left:1.1em;display:grid;gap:4px}
+.skills{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.skill{background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:14px 16px;min-width:0}
+.skill h3{font-size:1.05rem;margin-bottom:8px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tags span{font-size:13px;background:var(--accent-soft);color:var(--accent);border-radius:6px;padding:3px 8px}
+.list{margin:0;padding:0;list-style:none;border:1px solid var(--rule);border-radius:10px;background:var(--surface);overflow:hidden}
+.list li{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:12px 16px;border-top:1px solid var(--rule)}
+.list li:first-child{border-top:0}
+.list .t{font-weight:500;min-width:0}
+.list .s{display:block;font-size:13px;color:var(--muted);font-weight:400}
+.list a{font-family:var(--f-mono);font-size:12px;text-decoration:none;white-space:nowrap;border:1px solid var(--rule);border-radius:6px;padding:4px 8px}
+.list a:hover{border-color:var(--accent)}
+.award .t::before{content:"★ ";color:var(--signal)}
+.edu{display:grid;gap:10px}
+.edu div{display:grid;grid-template-columns:110px 1fr;gap:16px}
+.flow{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;counter-reset:s}
+.flow li{counter-increment:s;background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:12px;display:grid;gap:4px;align-content:start;min-width:0}
+.flow li::before{content:"0" counter(s);font-family:var(--f-mono);font-size:12px;color:var(--signal)}
+.flow b{font-family:var(--f-display);font-size:1.1rem;font-weight:600}
+.flow span{font-size:13px;color:var(--muted);line-height:1.4}
+.term{--tbg:#0E1416;--tfg:#CFE3DD;border-radius:10px;overflow:hidden;border:1px solid var(--rule);background:var(--tbg)}
+.term-bar{display:flex;align-items:center;gap:6px;padding:8px 12px;background:#182124;border-bottom:1px solid #243034}
+.term-bar span{width:10px;height:10px;border-radius:50%;background:#3A4A4E}
+.term-bar em{font-style:normal;font-family:var(--f-mono);font-size:12px;color:#8FA7A2;margin-left:8px}
+.term pre{margin:0;padding:14px 16px;overflow-x:auto;font-family:var(--f-mono);font-size:12.5px;line-height:1.55;color:var(--tfg)}
+.term .p{color:#6FD0C6}.term .w{color:#F2A35C}.term .c{color:#7E9893}
+.small{margin:0;font-size:14px;color:var(--muted)}
+.note{margin:0;font-size:13px;color:var(--muted)}
+@media (max-width:700px){.flow{grid-template-columns:1fr 1fr}}
+footer{font-size:13px;color:var(--muted);border-top:1px solid var(--rule);padding-top:16px}
+@media (max-width:560px){
+  .skills{grid-template-columns:1fr}
+  .timeline>li,.edu div{grid-template-columns:1fr;gap:4px}
+  .stats b{font-size:1.6rem}
+}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="eyebrow">Portfolio · Network Operations</p>
+    <h1>Irfan Yudvi Fadlurrohman</h1>
+    <p class="role">Network Operations &amp; Service Assurance · Logic &amp; B2B Specialist</p>
+    <p class="lede">Eleven years at PT Telkom Akses, from fiber optic field technician to team leader to B2B logic support. I monitor tickets and alarms, verify ONU status and VLAN configuration on OLTs over SSH, coordinate field teams, and keep enterprise customers updated until service is restored.</p>
+    <ul class="facts">
+      <li>Bogor, West Java</li>
+      <li>Open to NOC / IT Operations roles</li>
+      <li>24/7 shift ready</li>
+    </ul>
+  </header>
+
+  <div class="stats" aria-label="Highlights">
+    <div><b>11</b><span>years in network operations</span></div>
+    <div><b>3</b><span>company awards</span></div>
+    <div><b>3</b><span>OLT vendors handled: ZTE, Huawei, Fiberhome</span></div>
+  </div>
+
+  <section aria-labelledby="exp">
+    <h2 id="exp">Experience</h2>
+    <ol class="timeline">
+      <li>
+        <span class="yr now">2025 – now</span>
+        <div>
+          <h3>Logic &amp; B2B Specialist · PT Telkom Akses</h3>
+          <ul>
+            <li>Monitor and dispatch trouble tickets for enterprise services (Astinet, Metro Ethernet, VPN IP, SIP trunk, Telkomsel tower sites).</li>
+            <li>Check ONU status and VLAN configuration through CLI over SSH (TACACS); configure GPON on ZTE, Huawei and Fiberhome OLTs.</li>
+            <li>Send timed progress reports for VIP and VVIP customers and keep ticket logs current until closure.</li>
+            <li>Escalate beyond the access layer to the Regional Operations Center (L2) and Service Operation Division (L3) with full diagnostic data.</li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <span class="yr">2023 – 2024</span>
+        <div>
+          <h3>Team Leader, Field Assurance · PT Telkom Akses</h3>
+          <ul>
+            <li>Built a monthly closed-ticket dashboard with bulk remote checks every two hours, sending technicians before customers had to report again.</li>
+            <li>Reduced standard incidents in the area by about 10%, excluding mass outages.</li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <span class="yr">2015 – 2022</span>
+        <div>
+          <h3>Field Technician · Specialist Assurance · PT Telkom Akses</h3>
+          <p>FTTH installation and fault restoration: splicing, OTDR and OPM measurement, and on-site troubleshooting.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section aria-labelledby="skills">
+    <h2 id="skills">Skills &amp; tools</h2>
+    <div class="skills">
+      <div class="skill"><h3>Monitoring</h3><div class="tags"><span>Cacti</span><span>Huawei NMS</span><span>Fiberhome NMS</span><span>UNM</span><span>ACS</span></div></div>
+      <div class="skill"><h3>Access &amp; CLI</h3><div class="tags"><span>SSH</span><span>TACACS</span><span>GPON OLT CLI</span><span>ONU diagnostics</span><span>VLAN</span></div></div>
+      <div class="skill"><h3>Service operations</h3><div class="tags"><span>Ticket lifecycle</span><span>SLA / TTR</span><span>Escalation</span><span>VIP reporting</span></div></div>
+      <div class="skill"><h3>Fiber optic</h3><div class="tags"><span>Splicing</span><span>OTDR</span><span>OPM</span><span>FTTH</span></div></div>
+      <div class="skill"><h3>Enterprise services</h3><div class="tags"><span>Astinet</span><span>Metro Ethernet</span><span>VPN IP</span><span>SIP trunk</span></div></div>
+      <div class="skill"><h3>Learning now</h3><div class="tags"><span>Linux basics</span><span>Ubuntu on VirtualBox</span><span>MySQL client–server</span></div></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="hands">
+    <h2 id="hands">Hands-on: NMS &amp; CLI</h2>
+    <p class="lede">How I work an access-network incident, from the first alarm to a closed ticket.</p>
+    <ol class="flow" aria-label="Incident workflow">
+      <li><b>Detect</b><span>Ticket or alarm on the dashboard and NMS</span></li>
+      <li><b>Scope</b><span>One customer, or a whole port or OLT?</span></li>
+      <li><b>Verify</b><span>ONU state, optical level and VLAN through CLI</span></li>
+      <li><b>Act</b><span>Dispatch a technician, or escalate to ROC (L2) or DSO (L3)</span></li>
+      <li><b>Close</b><span>Confirm with the customer, update the log, close the ticket</span></li>
+    </ol>
+
+    <div class="term" role="img" aria-label="Sample Huawei OLT command output with placeholder data">
+      <div class="term-bar"><span></span><span></span><span></span><em>ssh · TACACS · Huawei OLT</em></div>
+<pre><span class="p">OLT-SAMPLE-01(config-if-gpon-0/1)#</span> display ont info 3 all
+-----------------------------------------------------------------------
+  F/S/P   ONT  SN                Control  Run      Config   Match
+          ID                     flag     state    state    state
+-----------------------------------------------------------------------
+  0/1/3   1    48575443XXXX0001  active   online   normal   match
+  0/1/3   2    48575443XXXX0002  active   online   normal   match
+  0/1/3   3    48575443XXXX0003  active   <span class="w">offline</span>  normal   match
+  0/1/3   4    48575443XXXX0004  active   online   normal   match
+-----------------------------------------------------------------------
+<span class="c"># ONT 3 offline while the rest of the port is online:
+# single-customer fault, so check its optical level, then dispatch.</span></pre>
+    </div>
+
+    <div class="skills">
+      <div class="skill"><h3>Huawei</h3><p class="small">CLI over SSH with TACACS: ONT status, optical power, service-port and VLAN checks. Huawei NMS for alarms and topology.</p></div>
+      <div class="skill"><h3>ZTE</h3><p class="small">CLI for ONU state and configuration; UNM for device management and provisioning.</p></div>
+      <div class="skill"><h3>Fiberhome</h3><p class="small">Fiberhome NMS for ONU lists, alarms and service configuration across OLTs.</p></div>
+      <div class="skill"><h3>Cacti</h3><p class="small">Traffic and utilization graphs to confirm whether a link is congested or down.</p></div>
+    </div>
+    <p class="note">Sample output uses placeholder data. Real screenshots are not published because they contain operator network data; I can walk through each tool live in an interview.</p>
+  </section>
+
+  <section aria-labelledby="awards">
+    <h2 id="awards">Honors &amp; awards</h2>
+    <ul class="list award">
+      <li><span class="t">3rd Best B2B Helpdesk<span class="s">PT Telkom Akses, Witel Bogor · Semester 2, 2025</span></span><a href="https://drive.google.com/file/d/1G6IhEoPDrPzlmaqS-rxu0wXBi7lWOGFc/view" target="_blank" rel="noopener">View ↗</a></li>
+      <li><span class="t">The Best Technician<span class="s">Telkom Akses Witel Bogor · 2020</span></span><a href="https://drive.google.com/file/d/1W-uaAJO2fBOiVYNAxk4ImjP95GOYWX04/view" target="_blank" rel="noopener">View ↗</a></li>
+      <li><span class="t">1st Winner, IndiHome Frontliner Competition<span class="s">Telkom Regional II · Assurance category · 2019</span></span><a href="https://drive.google.com/file/d/1h0Y_c18fYZb7I39FoOVWwJC-s0sZthxT/view" target="_blank" rel="noopener">View ↗</a></li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="certs">
+    <h2 id="certs">Certification</h2>
+    <ul class="list">
+      <li><span class="t">BNSP Competency License · Fiber Optic Specialist Assurance FTTH<span class="s">LSP Telkom Akses · issued 2023</span></span><a href="https://drive.google.com/drive/folders/1os8zK1F8aOvaIL7ohPsnxlusL1KaR4EC" target="_blank" rel="noopener">View ↗</a></li>
+    </ul>
+    <p class="eyebrow">Internal training · Telkom Akses Fiber Academy</p>
+    <ul class="list">
+      <li><span class="t">Fiber Optic Termination (FOT) Certification Bootcamp</span><a href="https://drive.google.com/file/d/1_9W5no8xs8I7gLu-UESEuPdL2UfVo0Ar/view" target="_blank" rel="noopener">View ↗</a></li>
+      <li><span class="t">Brevet Madya Operation</span><a href="https://drive.google.com/file/d/19W6OCwCj087iMgSL06Tnhg7dd8IiTJTD/view" target="_blank" rel="noopener">View ↗</a></li>
+      <li><span class="t">Brevet Assurance Basic</span><a href="https://drive.google.com/file/d/1OckKHapHKLYHJ_GDq6KlFN9arZF7UIwC/view" target="_blank" rel="noopener">View ↗</a></li>
+      <li><span class="t">Multiskill for Technician</span><a href="https://drive.google.com/file/d/1Ai7q_ava1TyZUXnMoLufvBns5BljfOlU/view" target="_blank" rel="noopener">View ↗</a></li>
+      <li><span class="t">Splicing Training<span class="s">2022</span></span><a href="https://drive.google.com/file/d/17kCaxVw3_7-qxPX6UlXnHbbpgan3oZ2x/view" target="_blank" rel="noopener">View ↗</a></li>
+      <li><span class="t">Bootcamp Communication<span class="s">2023</span></span><a href="https://drive.google.com/file/d/1Z4LHjPbRON56t422K4sX0mwPe02_Seym/view" target="_blank" rel="noopener">View ↗</a></li>
+      <li><span class="t">Communication Skill by Net Promoter Score (NPS)</span><a href="https://drive.google.com/file/d/1RPTh5t282cZr9qgRupxckdRdDQGXQiz2/view" target="_blank" rel="noopener">View ↗</a></li>
+      <li><span class="t">Occupational Health &amp; Safety (K3)</span><a href="https://drive.google.com/file/d/1HwK6xSCmJGutcRYmhIs_Zoco7lOKZUE-/view" target="_blank" rel="noopener">View ↗</a></li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="edu">
+    <h2 id="edu">Education</h2>
+    <div class="edu">
+      <div><span class="yr">2021 – now</span><span><b>Bachelor of Information Systems</b> · Universitas Terbuka · GPA 3.40</span></div>
+      <div><span class="yr">2012 – 2015</span><span><b>Software Engineering (RPL)</b> · SMK Negeri 1 Cibinong</span></div>
+    </div>
+  </section>
+
+  <footer>Irfan Yudvi Fadlurrohman · Bogor, Indonesia · Supporting documents are linked from Google Drive.</footer>
+</div>
+
+</body>
+</html>
